@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
                 )
 
                 resultTextView.text =
-                    "At the current rate of $interestRate%, saving \$$monthly a month you will have \$${String.format(
+                    "At $interestRate%, saving \$$monthly a month you will have \$${String.format(
                         "%f",
                         futureSavings
                     )} by $retirementAge."

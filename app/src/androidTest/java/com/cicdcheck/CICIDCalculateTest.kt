@@ -1,6 +1,5 @@
 package com.cicdcheck
 
-
 import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso.onView
@@ -16,15 +15,14 @@ import org.hamcrest.Matchers.allOf
 import org.hamcrest.TypeSafeMatcher
 import org.junit.Rule
 import org.junit.Test
+import org.junit.After
 import org.junit.runner.RunWith
 import com.microsoft.appcenter.espresso.Factory
 import com.microsoft.appcenter.espresso.ReportHelper
-import org.junit.After
-import org.junit.Before
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class CICDCalculateTest {
+class CICIDCalculateTest {
 
     @Rule
     @JvmField
@@ -35,7 +33,7 @@ class CICDCalculateTest {
     var reportHelper = Factory.getReportHelper()
 
     @Test
-    fun cICDCalculateTest() {
+    fun retirementCalcTest() {
         val appCompatEditText = onView(
             allOf(
                 withId(R.id.monthlySavingsEditText),
@@ -143,14 +141,9 @@ class CICDCalculateTest {
         textView.check(matches(withText("At the current rate of 3.0%, saving $200.0 a month you will have $151539.484375 by 65.")))
     }
 
-    @Before
-    fun before() {
-        reportHelper.label("Test Started")
-    }
-
     @After
     fun tearDown() {
-        reportHelper.label("Test finished")
+        reportHelper.label("Finishing test")
     }
 
     private fun childAtPosition(
